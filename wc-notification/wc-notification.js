@@ -7,13 +7,6 @@ class WCNotification extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `<style>
-wc-notification {
-  display: block;
-  background-color: red;
-  width: 100px;
-  height: 100px;
-}
-
 wc-notification .wc-notification-item {
   display: block;
   position: absolute;
