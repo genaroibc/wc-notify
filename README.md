@@ -4,7 +4,7 @@ A simple and customizable notification web component.
 
 ## Getting started
 
-Fast instalation in three simple steps:
+Quick instalation in three simple steps:
 
 1. Install
 
@@ -12,7 +12,7 @@ Fast instalation in three simple steps:
 npm i wc-notify
 ```
 
-2. Add at the root
+2. Add at the root of your project ([see examples in some popular frameworks](#examples))
 
 ```html
 <wc-notify></wc-notify>
@@ -25,3 +25,21 @@ import { notify } from "wc-notify";
 
 notify("An awesome notification 🥳");
 ```
+
+## Customization
+
+You can pass an object as second argument to the `notify` function to customize the notification:
+
+```js
+notify("Logged in successfully!", {
+  duration: 4000 // in milliseconds
+});
+```
+
+## Examples
+
+### NextJS
+
+### React (Vite)
+
+### Astro
