@@ -6,6 +6,8 @@ class WCNotify extends HTMLElement {
   attributeHasChangedCallback(...atrs) {}
 
   connectedCallback() {
+    const TRANSITION_DURATION = "0.2s";
+
     this.innerHTML = `<style>
 wc-notify .wc-notify-container {
   display: flex;
@@ -33,8 +35,9 @@ wc-notify .wc-notify-item {
   background-color:var(--wc-notify-bg, #000);
   color:var(--wc-notify-color, #eee);
   height: min-content;
-  transition: transform .5s ease;
-  animation: fadeIn 0.5s ease forwards, fadeOut 0.5s ease 3s forwards;
+  transition: transform ${TRANSITION_DURATION} ease;
+  animation: fadeIn ${TRANSITION_DURATION} ease forwards,
+   fadeOut ${TRANSITION_DURATION} ease calc(var(--wc-notify-item-duration) - ${TRANSITION_DURATION}) forwards;
 }
 
 @media screen and (max-width: 768px) {

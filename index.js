@@ -6,7 +6,11 @@ function uuid() {
   return String(Math.random() * Math.random());
 }
 
-function createNotificationItem(message) {
+const DEFAULT_DURATION = 3000;
+
+function createNotificationItem(message, config) {
+  const ANIMATION_DURATION = config?.duration ?? DEFAULT_DURATION;
+
   const item = document.createElement("span");
   const itemId = uuid();
   const notificationContainer = document.querySelector(
@@ -14,6 +18,10 @@ function createNotificationItem(message) {
   );
 
   item.setAttribute("data-wc-notify-item-id", itemId);
+  item.style.setProperty(
+    "--wc-notify-item-duration",
+    `${ANIMATION_DURATION}ms`
+  );
   item.classList.add("wc-notify-item", "wc-notify-item-visible");
   item.textContent = message;
 
@@ -31,9 +39,9 @@ function createNotificationItem(message) {
     if (notificationItemToRemove) {
       notificationContainer.removeChild(notificationItemToRemove);
     }
-  }, 4000);
+  }, ANIMATION_DURATION);
 }
 
-export function notify(message) {
-  createNotificationItem(message);
+export function notify(message, config) {
+  createNotificationItem(message, config);
 }
