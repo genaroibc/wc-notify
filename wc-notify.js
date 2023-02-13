@@ -1,4 +1,4 @@
-class WCNotification extends HTMLElement {
+class WCNotify extends HTMLElement {
   constructor(args) {
     super(args);
   }
@@ -7,7 +7,7 @@ class WCNotification extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `<style>
-wc-notification .wc-notification-container {
+wc-notify .wc-notify-container {
   display: flex;
   flex-direction: column-reverse;
   pointer-events: none;
@@ -20,7 +20,7 @@ wc-notification .wc-notification-container {
   translate: -50% 0;
 }
 
-wc-notification .wc-notification-item {
+wc-notify .wc-notify-item {
   transition: all .3s;
 
   pointer-events: auto;
@@ -30,19 +30,19 @@ wc-notification .wc-notification-item {
   box-shadow: 0px 2px 5px #0003;
   padding: 1rem;
   opacity: 0;
-  background-color:var(--wc-notification-bg, #000);
-  color:var(--wc-notification-color, #eee);
+  background-color:var(--wc-notify-bg, #000);
+  color:var(--wc-notify-color, #eee);
   height: min-content;
   transition: transform .5s ease;
   animation: fadeIn 0.5s ease forwards, fadeOut 0.5s ease 3s forwards;
 }
 
 @media screen and (max-width: 768px) {
-  wc-notification .wc-notification-item {
+  wc-notify .wc-notify-item {
     font-size: .8rem
   }
 
-  wc-notification .wc-notification-container {
+  wc-notify .wc-notify-container {
     gap: 12px
   }
 }
@@ -55,14 +55,16 @@ wc-notification .wc-notification-item {
    to { opacity: 1; }
 }
 </style>
-<div class="wc-notification-container"></div>`;
+<div class="wc-notify-container"></div>`;
   }
 
   disconnectedCallback() {}
 }
 
-export function defineWCNotification() {
-  if (window.customElements.get("wc-notification")) return;
+const wcNotifyIdentifier = "wc-notify";
 
-  window.customElements.define("wc-notification", WCNotification);
+export function defineWCNotify() {
+  if (window.customElements.get(wcNotifyIdentifier)) return;
+
+  window.customElements.define(wcNotifyIdentifier, WCNotify);
 }
