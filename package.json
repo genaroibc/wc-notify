@@ -1,12 +1,24 @@
 {
   "name": "wc-notification",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple and customizable notification Web Component.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "web components",
+    "javascript",
+    "component",
+    "web",
+    "notification",
+    "html",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GenaroIBC/wc-notification.git"
+  },
+  "author": "Genaro Bonavita",
   "license": "ISC"
 }
