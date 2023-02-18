@@ -4,7 +4,7 @@ A simple and customizable notification web component.
 
 ## 🎲 Demo
 
-See a demo using React [here]()
+See a demo using React [here](https://codesandbox.io/s/wc-notify-demo-nn687m)
 
 ## ▶️ Getting started
 
@@ -44,7 +44,7 @@ notify("Logged in successfully!", {
 
 ### NextJS
 
-Add `<wc-notify />` In the _\_app.jsx_ (or _\_app.tsx_) file:
+Add `<wc-notify />` ihttps://codesandbox.io/s/wc-notify-demo-nn687mn the _\_app.jsx_ (or _\_app.tsx_) file:
 
 ```jsx
 export default function App({ Component, pageProps }) {
