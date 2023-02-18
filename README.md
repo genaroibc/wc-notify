@@ -2,7 +2,11 @@
 
 A simple and customizable notification web component.
 
-## Getting started
+## 🎲 Demo
+
+See a demo using React [here]()
+
+## ▶️ Getting started
 
 Quick instalation in three simple steps:
 
@@ -26,7 +30,7 @@ import { notify } from "wc-notify";
 notify("An awesome notification 🥳");
 ```
 
-## Customization
+## 🎨 Customization
 
 You can pass an object as second argument to the `notify` function to customize the notification:
 
@@ -36,10 +40,44 @@ notify("Logged in successfully!", {
 });
 ```
 
-## Examples
+## 📂 Examples
 
 ### NextJS
 
-### React (Vite)
+Add `<wc-notify />` In the _\_app.jsx_ (or _\_app.tsx_) file:
+
+```jsx
+export default function App({ Component, pageProps }) {
+  return (
+    <>
+      <wc-notify />
+      <Component { ...pageProps } />
+    </>
+  )
+}
+```
+
+If your linter complains about that <p style="color: #f66;">_Property 'wc-notify' does not exist on type 'JSX.IntrinsicElements'._</p> you can simply create a _global.d.ts_ file in the root of your project and paste the following code:
+
+```ts
+// global.d.ts
+import * as React from "react";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'wc-notify': React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+    }
+  }
+}
+
+export {};
+
+```
+
+### React (with Vite)
 
 ### Astro
